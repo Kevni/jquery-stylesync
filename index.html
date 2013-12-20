@@ -1,0 +1,35 @@
+<!document html5>
+<html lang="de">
+<head>
+   <title>StyleSync Test</title>
+   <script type="text/javascript" src="jquery.js"></script>
+   <script type="text/javascript" src="jquery-stylesync.js"></script>
+</head>
+<body>
+   <input type="text" id="text" />
+   <input type="button" value="Button" id="button" />
+   
+   
+   <script type="text/javascript">
+     $(document).ready(function ready() {
+     
+         var button = $("#button");
+         var input = $("#text");
+         
+         input.styleSync(button, ["width", "color"]);
+     
+         setInterval(function() {
+            var width = input.css("width");
+            
+            var vorzeichen;
+            if (width > 300) vorzeichen = -1;
+            else if (width < 30) vorzeichen = 1;
+            
+            input.css("width", width + (1 * vorzeichen);
+         }, 50);
+     
+     
+     });
+   </script>
+</body>
+</html>
